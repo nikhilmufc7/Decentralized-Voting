@@ -1,4 +1,4 @@
-# Decentralized Voting System
+# Decentralized P2P Voting App
 ---
 ##### **The voting system in India as well as in some countries abroad is flawed and can be easily manipulated and hampered by those with power to suit their personal benefits. It allows people with money to buy the votes or tamper the machine that record it. A current example can be the recent elections in Uttar Pradesh where the ruling party manipulated the voting machines to gain unfair advantage.** ##### 
 #### Solution ####
