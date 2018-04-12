@@ -36,29 +36,64 @@ export default {
       candidates: [
         {
           name: "Narendra Modi",
+          style: "notification is-info",
+          photo: 'NarendraModi',
           country: "India"
-        }
+        },
+        {
+          name: "Donald Trump",
+          style: "notification is-info",
+          photo: 'DonaldTrump',
+          country: "USA"
+        },
+        {
+          name: "Barack Obama",
+          style: "notification is-info",
+          photo : 'BarackObama',
+          country: 'USA'
+        },
+        {
+          name: "Vladmir Putin",
+          style: "notification is-info",
+          photo: 'VladmirPutin',
+          country: 'Russia'
+        };
       ]
-    };
+    }
+  }
+  methods: {
+
+      vote(candidate){
+        $this.emit('vote',candidate);
+      }
+
+
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
+
+<style lang="stylus">
+
+.candidate-card{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  candidate-data{
+  justify-content : flex-start;
+  padding-left: 5px;
+
+  candidate-name: {
+    font-weight: bold;
+    font-weight: 1.3em;
+  }
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.notification{
+  text-align: center;
+  min-width : 225px;
+  margin-top: 5px;
+
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
 }
 </style>
