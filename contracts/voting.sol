@@ -1,29 +1,35 @@
 pragma solidity ^0.4.18;
 
 contract Voting {
-  bytes32[] private candidate;
+  // list all the candidates
+  bytes32[] private candidates;
 
+  // list all the voters
   address[] private voters;
 
-  mapping (bytes32 => uint8) private votesRecieved;
+  // hashmap to get the votes d
+  mapping (bytes32 => uint8) private votesReceived;
 
+  // Constructor for names of candidates standing in election
   function Voting(bytes32[] candidateNames) public {
     candidates = candidateNames;
   }
-}
 
-function getResults (bytes32 candidate) public{
-  // necessary for verifying fake users and if votes are valid or not
-  require(ifValidCandidate(candidate));
-  require(ifValidVote(msg.sender));
+  function getVotingResultForCandidate(bytes32 candidate) view public returns (uint8) {
+    return votesReceived[candidate];
+  }
 
-  votesRecieved[candidate] += 1;
-  voters.push(msg.sender)
+  function voteForCandidate(bytes32 candidate) public {
+    // to check if candidate is legit
+    require(isValidCandidate(candidate));
+    require(isValidVoter(msg.sender));
 
-}
+    votesReceived[candidate] += 1;
+    voters.push(msg.sender);
+  }
 
-function ifValidCandidate(bytes32 candidate) view public returns (bool) {
-
+  // for verifying if candidate is legit as well as the vote
+  function isValidCandidate(bytes32 candidate) view public returns (bool) {
     for(uint i = 0; i < candidates.length; i++) {
       if (candidates[i] == candidate) {
         return true;
@@ -32,7 +38,7 @@ function ifValidCandidate(bytes32 candidate) view public returns (bool) {
     return false;
   }
 
-  function ifValidVoter(address voter) view public returns (bool) {
+  function isValidVoter(address voter) view public returns (bool) {
     for(uint i = 0; i < voters.length; i++) {
       if (voters[i] == voter) {
         return false;
