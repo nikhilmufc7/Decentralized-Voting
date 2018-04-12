@@ -13,7 +13,7 @@ contract Voting {
 }
 
 function getResults (bytes32 candidate) public{
-  // necessary for d
+  // necessary for verifying fake users and if votes are valid or not
   require(ifValidCandidate(candidate));
   require(ifValidVote(msg.sender));
 
