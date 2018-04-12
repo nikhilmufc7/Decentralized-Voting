@@ -11,3 +11,5 @@ contract Voting {
     candidates = candidateNames;
   }
 }
+
+function getResults (bytes32 candidate)
