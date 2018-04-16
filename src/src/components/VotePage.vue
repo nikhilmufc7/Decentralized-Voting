@@ -38,25 +38,25 @@ export default {
           name: "Narendra Modi",
           style: "notification is-info",
           photo: NarendraModi,
-          occupation: "Scientist"
+          occupation: "Prime Minister"
         },
         {
           name: "Barack Obama",
           style: "notification is-success",
           photo: BarackObama,
-          occupation: "Actor"
+          occupation: "Ex President"
         },
         {
           name: "Donald Trump",
           style: "notification is-warning",
           photo: DonaldTrump,
-          occupation: "Businessman"
+          occupation: "President"
         },
         {
           name: "Vladmir Putin",
           style: "notification is-danger",
           photo: VladmirPutin,
-          occupation: "Jobless"
+          occupation: "President"
         }
       ]
     };
